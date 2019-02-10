@@ -1,4 +1,4 @@
-
+/*
 $( document ).ready(function() {
     console.log( "ready!!" );
 
@@ -10,7 +10,12 @@ $( document ).ready(function() {
  });
 });
 
+*/
   // Script to open and close sidebar
+console.log("This is from jQuery");
+
+//console.log($.fn.jquery);
+
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
@@ -20,4 +25,4 @@ function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
 }
-});
+//});
