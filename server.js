@@ -56,7 +56,6 @@ connect.then((db) => {
         }
     });
 
-
     newFamily.save()
         .then((family) => { //returns the family being entered
             console.log(family);
@@ -88,6 +87,7 @@ app.get('/register',function(req,res){
 app.get('/viewFamilies',function(req,res){
     res.sendFile(__dirname + '/views/viewFamilies.html');
   });
+  
 
 // listen for requests :)
 const listener = app.listen(PORT, function() {

@@ -1,97 +1,158 @@
-<!DOCTYPE html>
-<html>
-<title>Sakinah Circle</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<script src="{{asset('../app/controller/resister.js')}}"></script>
-
-<script>
-    console.log("Test");
-    console.log($.fn.jquery);
-</script>
-
-<body class="w3-light-grey">
-    <form action="/families" method="POST">
-        fID:<br>
-        <input type="text" name="firstName" value="">
-        <br>
-        paymentType:<br>
-        <input type="text" name="lastName" value="Mouse">
-        <br>
-        fID:<br>
-        <input type="text" name="fID" value="">
-        <br>
-        paymentType:<br>
-        <input type="text" name="paymentType" value="Mouse">
-        <br>
-        motherFirstName:<br>
-        <input type="text" name="motherFirstName" value="Mickey">
-        <br>
-        motherLastName:<br>
-        <input type="text" name="motherLastName" value="Mickey">
-        <br>
-        fatherFirstName:<br>
-        <input type="text" name="fatherFirstName" value="Mickey">
-        <br>
-        fatherLastName:<br>
-        <input type="text" name="fatherLastName" value="Mickey">
-        <br>
-        email:<br>
-        <input type="text" name="email" value="Mickey">
-        <br>
-        phoneNumber:<br>
-        <input type="text" name="phoneNumber" value="Mickey">
-        <br>
-        childfID:<br>
-        <input type="text" name="childfID" value="Mickey">
-        <br>
-        childfirstName:<br>
-        <input type="text" name="childfirstName" value="Mickey">
-        <br>
-        childLastName:<br>
-        <input type="text" name="childlastName" value="cHILDLastName">
-        <br>
-        childgrade:<br>
-        <input type="text" name="childgrade" value="Mickey">
-        <br>
-        paymentfID:<br>
-        <input type="text" name="paymentfID" value="Mickey">
-        <br>
-        september:<br>
-        <input type="text" name="september" value="Mickey">
-        <br>
-        october:<br>
-        <input type="text" name="october" value="Mickey">
-        <br>
-        november:<br>
-        <input type="text" name="november" value="Mickey">
-        <br>
-        december:<br>
-        <input type="text" name="december" value="Mickey">
-        <br>
-        january:<br>
-        <input type="text" name="january" value="Mickey">
-        <br>
-        february:<br>
-        <input type="text" name="february" value="Mickey">
-        <br>
-        march:<br>
-        <input type="text" name="march" value="Mickey">
-        <br>
-        april:<br>
-        <input type="text" name="april" value="Mickey">
-        <br>
-        may:<br>
-        <input type="text" name="may" value="Mickey">
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
-
-
-</body>
-
-</html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Registration Form</title>
+        <link rel="stylesheet" href="https://almasrepair.000webhostapp.com/css/familyform.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        
+        </head>
+        
+        <body>
+        
+            <div id="form-main"> 
+                <div id="form-div">
+                  <form class="form" id="form1" action="/Families" method="post" >
+                    <div class="w3-center w3-large w3-padding w3-margin-bottom">Family Registration</div>
+                    <b>Father's Details</b>
+                    <p> 
+                      <input name="firstname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                                
+                        <input name="lastname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+                    </p>
+                    <b>Mother's Details</b>
+                    <p> 
+                      <input name="firstname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                                
+                        <input name="lastname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+                    </p>
+                    
+                    <b>Contact information</b>
+                    <p>
+                      <input name="email" type="text" class="w3-margin-bottom validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Email" id="email" required  /> 
+                      <input name="phone" type="text" class=" feedback-input" placeholder="Phone Number" id="phone" required  />
+                    </p>
+                    
+                    <b>Payment Type</b>
+                     <p class="w3-row">
+                      <input name="payment" value="cash" type="radio" class="w3-radio w3-middle " /> Cash
+                      <input name="payment" value="cheque" type="radio" class="w3-radio w3-middle " /> Cheque
+                      <input name="payment" value="etf" type="radio" class="w3-radio w3-middle " /> EFT
+                     </p>
+                    
+                    <b>Child's Details</b>
+                    <p> 
+                      <input name="childfirstName1" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                                
+                        <input name="childlastName1" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+        
+        <select class="w3-select w3-margin-top" name="childgrade1" >
+          <option value="" disabled selected>Choose child's grade</option>
+          <option value="1">Kindergarten</option>
+          <option value="2">Grade 1</option>
+          <option value="3">Grade 2</option>
+          <option value="4">Grade 3</option>
+          <option value="5">Grade 4</option>
+          <option value="6">Grade 5</option>
+          <option value="7">Grade 6</option>
+        </select>
+                    </p>
+                    
+                    <!--Add 2nd child -->
+                   
+                        <div class="addchild w3-margin-bottom w3-hide ">
+                    
+                                <p class="w3-text-white"> <b>2nd Child's Details</b></p>
+         
+                      <input name="childfirstName2" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                                
+                        <input name="childlastName2" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+        
+                    <select class="w3-select w3-margin-top" name="childgrade2" >
+                      <option value="" disabled selected>Choose child's grade</option>
+                      <option value="1">Kindergarten</option>
+                      <option value="2">Grade 1</option>
+                      <option value="3">Grade 2</option>
+                      <option value="4">Grade 3</option>
+                      <option value="5">Grade 4</option>
+                      <option value="6">Grade 5</option>
+                      <option value="7">Grade 6</option>
+                    </select>
+                    </div> 
+                    <!-- 3rd child -->
+                    <div class="addchild w3-margin-bottom w3-hide ">
+                    
+                                <p> <b>3rd Child's Details</b></p>
+         
+                      <input name="childfirstName3" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                                
+                        <input name="childlastName3" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+        
+                    <select class="w3-select w3-margin-top" name="childgrade3" >
+                      <option value="" disabled selected>Choose child's grade</option>
+                      <option value="1">Kindergarten</option>
+                      <option value="2">Grade 1</option>
+                      <option value="3">Grade 2</option>
+                      <option value="4">Grade 3</option>
+                      <option value="5">Grade 4</option>
+                      <option value="6">Grade 5</option>
+                      <option value="7">Grade 6</option>
+                    </select>
+                    </div> 
+                    <!-- 4th child -->
+                    <div class="addchild w3-margin-bottom w3-hide ">
+                    
+                                <p> <b>4th Child's Details</b></p>
+         
+                      <input name="childfirstName3" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                                
+                        <input name="childlastName4" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+        
+                    <select class="w3-select w3-margin-top" name="childgrade4" >
+                      <option value="" disabled selected>Choose child's grade</option>
+                      <option value="1">Kindergarten</option>
+                      <option value="2">Grade 1</option>
+                      <option value="3">Grade 2</option>
+                      <option value="4">Grade 3</option>
+                      <option value="5">Grade 4</option>
+                      <option value="6">Grade 5</option>
+                      <option value="7">Grade 6</option>
+                    </select>
+                    </div> 
+                    
+                    
+                    
+                    <div id="addChildButton" onclick="addchild()" class="w3-button w3-blue-grey w3-margin-bottom">Add another child</div>
+                             
+                    <div class="submit" id="p-submit">
+                      <input type="submit" name="submit" value="Submit" id="button-blue"/>
+                      <div class="ease"></div>
+                    </div>
+                  </form>
+                </div>
+        </div>
+        
+        
+         <script>
+                    var i=0;
+                    function addchild(){
+                        
+                        var newchild = document.getElementsByClassName("addchild");
+                        newchild[i].className = newchild[i].className.replace(" w3-hide", "");
+                        i++;
+                        if (i >= 3){
+                            $("#addChildButton").hide();
+                        }
+                    }
+                    </script>
+        
+               
+               
+                
+        </body>
+        </html>
+        
+        
+         

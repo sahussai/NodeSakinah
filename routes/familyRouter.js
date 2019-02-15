@@ -31,29 +31,39 @@ familyRouter.route("/")
     .catch((err) => next(err));
 })
 .post((req, res, next) => {
-    //console.log(req.body);
-    // Families.create(req.body)
-    // .then((family) => {
-    //     console.log('User Created ', family);
-    //     res.statusCode = 200;
-    //     res.setHeader('Content-Type', 'application/json');
-    //     res.json(family);
-    // }, (err) => next(err))
-    // .catch((err) => next(err));
     var jsonObject = {
         firstName: `${req.body.firstName}`,
         lastName: `${req.body.lastName}`
     };
 
-    var childObject = new Child({
-        fID : `${req.body.childfID}`,
-        firstName: `${req.body.childfirstName}`,
-        lastName: `${req.body.childlastName}`,
-        grade: `${req.body.childgrade}`
+    var childObject1 = new Child({
+        fID : `56542`,//`${req.body.fID}`,
+        firstName: `${req.body.childfirstName1}`,
+        lastName: `${req.body.childlastName1}`,
+        grade: `${req.body.childgrade1}`
+    });
+
+    var childObject2 = new Child({
+        fID : `${req.body.fID}`,
+        firstName: `${req.body.childfirstName2}`,
+        lastName: `${req.body.childlastName2}`,
+        grade: `${req.body.childgrade2}`
+    });
+    var childObject3 = new Child({
+        fID : `${req.body.fID}`,
+        firstName: `${req.body.childfirstName3}`,
+        lastName: `${req.body.childlastName3}`,
+        grade: `${req.body.childgrade3}`
+    });
+    var childObject4 = new Child({
+        fID : `${req.body.fID}`,
+        firstName: `${req.body.childfirstName4}`,
+        lastName: `${req.body.childlastName4}`,
+        grade: `${req.body.childgrade4}`
     });
 
     var paymentObject = new Payment({
-            fID: `${req.body.paymentfID}`,
+            fID: `${req.body.fID}`,
             September: `${req.body.september}`,
             October: `${req.body.october}`,
             November: `${req.body.november}`,
@@ -65,35 +75,10 @@ familyRouter.route("/")
             May: `${req.body.may}`
     });
 
-    // console.log('Child Object:',childObject);
-    // console.log('Payment Object:',paymentObject);
-
-
-    // childObject.save()
-    // .then((test) => {
-    //     console.log('Child Created ', test);
-    //     res.statusCode = 200;
-    //     res.setHeader('Content-Type', 'application/json');
-    //     tempChild = test;
-    //     //res.json(test);
-    // }, (err) => next(err))
-    // .catch((err) => next(err));
-
-
-    // paymentObject.save()
-    // .then((test) => {
-    //     //console.log('Payment Created ', test);
-    //     res.statusCode = 200;
-    //     res.setHeader('Content-Type', 'application/json');
-    //     //res.json(test);
-    //     tempPayment = test; 
-    // }, (err) => next(err))
-    // .catch((err) => next(err));
-
     var realjsonObject = new Families({
         fID: `${req.body.fID}`,
         paymentType: `${req.body.paymentType}`,
-        children: [childObject],
+        children: [childObject1, childObject2, childObject3, childObject4],
         motherFirstName: `${req.body.motherFirstName}`,
         motherLastName: `${req.body.motherLastName}`,
         fatherFirstName: `${req.body.fatherFirstName}`,
@@ -102,7 +87,8 @@ familyRouter.route("/")
         phoneNumber: `${req.body.phoneNumber}`,
         payments: [paymentObject]
     });
-    console.log('req body:',realjsonObject);
+    console.log('req body:',req.body);
+    console.log('realjsonObject:',realjsonObject);
     realjsonObject.save()
     .then((test) => {
         console.log('realjsonObject Created ', test);
