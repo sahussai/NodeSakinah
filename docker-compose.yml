@@ -10,7 +10,7 @@ services:
       - "4000:4000"
     links:
       - mongo
-    command: nodemon --watch views -e js,html --watch server.js --watch routes -e js
+    command: nodemon --watch server.js --watch views -e js,html --watch routes -e js -L
 
   mongo:
     container_name: mongo

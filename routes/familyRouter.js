@@ -35,9 +35,10 @@ familyRouter.route("/")
         firstName: `${req.body.firstName}`,
         lastName: `${req.body.lastName}`
     };
-
+    req.body.fID = `3253`;
+    console.log(req.body.fID);
     var childObject1 = new Child({
-        fID : `56542`,//`${req.body.fID}`,
+        fID : `${req.body.fID}`,
         firstName: `${req.body.childfirstName1}`,
         lastName: `${req.body.childlastName1}`,
         grade: `${req.body.childgrade1}`

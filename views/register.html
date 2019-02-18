@@ -7,6 +7,7 @@
             <title>Registration Form</title>
         <link rel="stylesheet" href="https://almasrepair.000webhostapp.com/css/familyform.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
         </head>
         
@@ -15,31 +16,31 @@
             <div id="form-main"> 
                 <div id="form-div">
                   <form class="form" id="form1" action="/Families" method="post" >
-                    <div class="w3-center w3-large w3-padding w3-margin-bottom">Family Registration</div>
+                    <div class="w3-center w3-large w3-padding w3-margin-bottom">Family Registrations</div>
                     <b>Father's Details</b>
                     <p> 
-                      <input name="firstname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                      <input name="fatherFirstName" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
                                 
-                        <input name="lastname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+                        <input name="fatherLastName" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
                     </p>
                     <b>Mother's Details</b>
                     <p> 
-                      <input name="firstname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                      <input name="motherFirstName" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
                                 
-                        <input name="lastname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+                        <input name="motherLastName" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
                     </p>
                     
                     <b>Contact information</b>
                     <p>
                       <input name="email" type="text" class="w3-margin-bottom validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Email" id="email" required  /> 
-                      <input name="phone" type="text" class=" feedback-input" placeholder="Phone Number" id="phone" required  />
+                      <input name="phoneNumber" type="text" class=" feedback-input" placeholder="Phone Number" id="phone" required  />
                     </p>
                     
                     <b>Payment Type</b>
                      <p class="w3-row">
-                      <input name="payment" value="cash" type="radio" class="w3-radio w3-middle " /> Cash
-                      <input name="payment" value="cheque" type="radio" class="w3-radio w3-middle " /> Cheque
-                      <input name="payment" value="etf" type="radio" class="w3-radio w3-middle " /> EFT
+                      <input name="paymentType" value="cash" type="radio" class="w3-radio w3-middle " /> Cash
+                      <input name="paymentType" value="cheque" type="radio" class="w3-radio w3-middle " /> Cheque
+                      <input name="paymentType" value="etf" type="radio" class="w3-radio w3-middle " /> EFT
                      </p>
                     
                     <b>Child's Details</b>
@@ -66,9 +67,9 @@
                     
                                 <p class="w3-text-white"> <b>2nd Child's Details</b></p>
          
-                      <input name="childfirstName2" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                      <input name="childfirstName2" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" />
                                 
-                        <input name="childlastName2" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+                        <input name="childlastName2" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname"  />
         
                     <select class="w3-select w3-margin-top" name="childgrade2" >
                       <option value="" disabled selected>Choose child's grade</option>
@@ -86,9 +87,9 @@
                     
                                 <p> <b>3rd Child's Details</b></p>
          
-                      <input name="childfirstName3" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                      <input name="childfirstName3" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" />
                                 
-                        <input name="childlastName3" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+                        <input name="childlastName3" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname"  />
         
                     <select class="w3-select w3-margin-top" name="childgrade3" >
                       <option value="" disabled selected>Choose child's grade</option>
@@ -106,9 +107,9 @@
                     
                                 <p> <b>4th Child's Details</b></p>
          
-                      <input name="childfirstName3" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname" required />
+                      <input name="childfirstName3" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input " placeholder=" First Name" id="firstname"  />
                                 
-                        <input name="childlastName4" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname" required  />
+                        <input name="childlastName4" type="text" class="validate[custom[onlyLetter],length[0,100]] feedback-input" placeholder="Last Name" id="lastname"   />
         
                     <select class="w3-select w3-margin-top" name="childgrade4" >
                       <option value="" disabled selected>Choose child's grade</option>
@@ -136,6 +137,8 @@
         
         
          <script>
+           //The client should handle the case if there is less than 4 children entered. 
+           //It should fill in 'undefined' for the unentered children, so the server can still accept the entry.
                     var i=0;
                     function addchild(){
                         
